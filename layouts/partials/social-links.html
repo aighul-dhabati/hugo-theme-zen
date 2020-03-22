@@ -1,0 +1,8 @@
+<h2 class="visually-hidden">Social links</h2>
+<ul>
+    {{ range $elem_index, $elem_val := $.Param "socialprofiles" }}
+        <li>
+                <a href="{{ $elem_val }}"><img src="/icons/svg/{{ $elem_index }}.svg" alt="{{ $elem_index | title }} logo"></a></li>
+    {{ end }}
+</ul>
+

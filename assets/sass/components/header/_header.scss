@@ -2,6 +2,16 @@
 
 .header,
 %header {
+  background-image: url(https://picsum.photos/id/291/1800/700);
+  background-position: top left;
+  background-size: 100%;
+  background-color: #555555;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   @include respond-to(s) {
     display: flex;
   }
@@ -41,6 +51,9 @@
     }
   }
 
+  &__slogan {
+    color: white;
+  }
   // Wrapper for any blocks placed in the header region.
   &__region {
     @include respond-to(s) {

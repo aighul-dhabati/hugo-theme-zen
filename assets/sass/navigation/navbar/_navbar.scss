@@ -2,8 +2,12 @@
 //
 // A simple method to get navigation links to appear in one line.
 
-.navbar,
-%navbar {
+nav.layout__navigation {
+  display: flex;
+}
+
+.main-menu,
+%main-menu {
   display: flex;
   flex-wrap: wrap;
   margin: 0;

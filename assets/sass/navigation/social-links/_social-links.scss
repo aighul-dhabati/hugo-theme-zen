@@ -1,0 +1,28 @@
+.topbar-inner {
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        margin-right: 15px;
+
+        img {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  }
+}

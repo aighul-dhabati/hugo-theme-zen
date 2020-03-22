@@ -1,0 +1,22 @@
+<header class="header layout__header">
+    {{ if $.Param "logo" | default true }}<a href="{{ "/" | relLangURL }}" title="Home" rel="home" class="header__logo"><img
+                src="{{ $.Param "logo_path" | relURL }}" alt="Home" class="header__logo-image"></a>{{ end }}
+    {{ if $.Param "header_site_name"}}
+    <h1 class="header__site-name">
+        <a href="{{ "/" | relLangURL }}" title="Home" class="header__site-link"
+           rel="home"><span>{{ .Site.Title }}</span></a>
+    </h1>
+    {{ end }}
+    {{ if $.Param "slogan" }}
+        <p class="header__slogan">
+            {{ $.Param "slogan" }}
+        </p>
+    {{ end }}
+    {{ if $.Param "header_action_links"}}
+        <div class="header__action-links">
+            {{ range $links_index, $link_values := $.Param "header_action_links" }}
+                <a href="{{ $link_values.url }}" class="button">{{ $link_values.text }}</a>
+            {{ end }}
+        </div>
+    {{ end }}
+</header>
