@@ -1,0 +1,16 @@
+.related {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 1rem;
+  margin-top: 20px;
+}
+
+.related-tile {
+  display: grid;
+  grid-template-columns: [image]200px [description]auto;
+  grid-gap: 1rem;
+
+  .related-description-heading {
+    @include font-size(32px);
+  }
+}

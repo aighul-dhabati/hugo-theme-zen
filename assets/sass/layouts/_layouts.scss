@@ -56,7 +56,7 @@
       grid-template-columns: 1fr;
     }
 
-    @include respond-to(xl) {
+    @include respond-to(xxxl) {
       &__page {
           grid-template-rows:
                   auto
@@ -92,8 +92,8 @@
                   'bottom side2'
                   'foot foot';
           grid-template-columns:
-                  2fr
-                  1fr;
+                  5fr
+                  2fr;
       }
 
       &__sidebar-two {

@@ -4,7 +4,7 @@
 %header {
   background-image: url(https://picsum.photos/id/291/1800/700);
   background-position: top left;
-  background-size: 100%;
+  background-size: cover;
   background-color: #555555;
   background-repeat: no-repeat;
   width: 100%;
@@ -53,6 +53,7 @@
 
   &__slogan {
     color: white;
+    text-align: center;
   }
   // Wrapper for any blocks placed in the header region.
   &__region {

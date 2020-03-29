@@ -18,14 +18,13 @@
         {{ if $.Param "topbar" | default true}}
         <div class="topbar-inner">
             <div class="social-links topbar__region">
-                {{/*<ul>
-                    <li><a href="https://facebook.com"><img src="/icons/svg/facebook.svg" alt="Facebook icon"></a></li>
-                    <li><a href=""></a></li>
-                    <li></li>
-                </ul>*/}}
                 {{ partial "social-links.html" . }}
             </div>
-            {{ if .Site.IsMultiLingual }}{{ partial "language-selector.html" . }}{{ end -}}
+            <div class="navs topbar__region">
+                <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true"
+                   role="button">{{ i18n "menu_mobile" }}</a>
+                {{ if .Site.IsMultiLingual }}{{ partial "language-selector.html" . }}{{ end -}}
+            </div>
         </div>
         {{ end }}
     </div>

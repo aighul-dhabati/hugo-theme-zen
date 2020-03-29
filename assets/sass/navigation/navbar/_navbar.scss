@@ -3,7 +3,12 @@
 // A simple method to get navigation links to appear in one line.
 
 nav.layout__navigation {
-  display: flex;
+  //display: flex;
+  display: none;
+
+  @include respond-to(s) {
+    display: flex;
+  }
 }
 
 .main-menu,
