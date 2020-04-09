@@ -1,16 +1,37 @@
-.related {
+.featured {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   grid-gap: 1rem;
   margin-top: 20px;
 }
 
-.related-tile {
-  display: grid;
-  grid-template-columns: [image]200px [description]auto;
-  grid-gap: 1rem;
+.featured-tile {
+  border: 1px solid grey;
 
-  .related-description-heading {
+  @include respond-to(s) {
+    display: flex;
+    grid-template-columns: [image] 200px [description] auto;
+    grid-gap: 1rem;
+  }
+
+  .featured-image {
+    flex-basis: 30%;
+  }
+
+  picture.highlight-image img {
+    width: 100%;
+    @include respond-to(s) {
+      object-fit: cover;
+      max-height: 100%;
+    }
+  }
+
+  .featured-description {
+    padding: 1rem 1rem 1rem 0;
+    flex-basis: 70%;
+  }
+
+  .featured-description-heading {
     @include font-size(32px);
   }
 }

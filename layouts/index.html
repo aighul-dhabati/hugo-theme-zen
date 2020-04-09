@@ -13,9 +13,14 @@
 
 {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 {{ $paginator := .Paginate $pages -}}
-{{ range $paginator.Pages -}}
-{{ .Render "summary"}}
-{{ end -}}
+<div class="posts">
+    <h2>{{ i18n "news_homepage_title" }}</h2>
+    <div class="posts-grid">
+        {{ range $paginator.Pages -}}
+            {{ .Render "summary"}}
+        {{ end -}}
+    </div>
+</div>
 
 {{ partial "pagination.html" . }}
 </main>

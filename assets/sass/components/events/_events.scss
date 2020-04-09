@@ -1,0 +1,18 @@
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-gap: 2rem;
+
+  div.event {
+    border: 1px solid lightgray;
+    border-radius: 0.25rem;
+
+    img.summary-image {
+      width: 100%;
+    }
+
+    h3, .event-description {
+      padding: 0 0.4rem 0 0.4rem;
+    }
+  }
+}

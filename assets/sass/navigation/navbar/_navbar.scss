@@ -6,7 +6,7 @@ nav.layout__navigation {
   //display: flex;
   display: none;
 
-  @include respond-to(s) {
+  @include respond-to(l) {
     display: flex;
   }
 }

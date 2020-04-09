@@ -26,6 +26,14 @@
       padding: 0 $zen-gutters;
     }
   }
+
+  &__second-sidebar {
+    padding-right: $zen-gutters / 2;
+
+    @include respond-to(s) {
+      padding-right: 0 $zen-gutters;
+    }
+  }
 }
 
 @supports (display: grid) {

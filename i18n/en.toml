@@ -87,3 +87,6 @@ other = "Skip if you are a human"
 
 [lang_select_title]
 other = "Language selector"
+
+[news_homepage_title]
+other = "What's happening?"

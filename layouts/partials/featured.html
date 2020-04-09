@@ -1,16 +1,23 @@
 {{ $headless := .Site.GetPage "/featured" }}
 {{ $reusablePages := $headless.Resources.ByType "page" }}
-<div class="related">
+<div class="featured">
     {{ range $reusablePages }}
         {{ $title := .Title }}
-        <div class="related-tile">
+        <div class="featured-tile">
             {{ with .Params.image }}
                 {{ $imageResource := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" . ) }}
-                {{ $resized := $imageResource.Fill "200x200" }}
-                <img class="highlight-image" alt="{{ $title }}" src="{{ $resized.RelPermalink }}"/>
+                {{ $resized_mobile := $imageResource.Fill "400x300" }}
+                {{ $resized_regular := $imageResource.Fill "600x600" }}
+                    <div class="featured-image">
+                        <picture class="highlight-image">
+                            <source srcset="{{ $resized_regular.RelPermalink }}" media="(min-width: 666px)">
+                            <img src="{{ $resized_mobile.RelPermalink }}" alt="MDN"/>
+                        </picture>
+                    </div>
+{{/*                <img class="highlight-image" alt="{{ $title }}" src="{{ $resized.RelPermalink }}"/>*/}}
             {{ end }}
-            <div class="related-description">
-                <div class="related-description-heading">{{ .Title }}</div>
+            <div class="featured-description">
+                <div class="featured-description-heading">{{ .Title }}</div>
                 <p>{{ .Content }}</p>
             </div>
         </div>

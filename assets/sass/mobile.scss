@@ -22,7 +22,7 @@
   z-index: 20;
   pointer-events: none;
 
-  @include respond-to(s) {
+  @include respond-to(l) {
     display: none;
   }
 
@@ -58,7 +58,7 @@
     color: $text;
     pointer-events: auto;
 
-    @include respond-to(s) {
+    @include respond-to(l) {
       display: none;
     }
 

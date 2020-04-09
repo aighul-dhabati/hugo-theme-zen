@@ -1,4 +1,4 @@
-{{ $currentSection := .Section -}}
+{{/*{{ $currentSection := .Section -}}
 {{ $currentID := "" -}}
 {{ with .File }}{{ $currentID = .UniqueID }}{{ end -}}
 <aside class="sidebar layout__second-sidebar">
@@ -12,4 +12,29 @@
 </ul>
 </section>
 {{ end -}}
-</aside>
+</aside>*/}}
+
+{{/*
+{{ $upcoming := where .Pages ".Date" "ge" now }}
+{{ if ne (len $upcoming) 0 }}
+    {{ range $upcoming }}
+        {{ .Content }}
+    {{ end }}
+{{ else }}
+    <p>Shoot! There are no upcoming events</p>
+{{ end }}
+*/}}
+<div class="layout__second-sidebar">
+    {{ $events := where .Page.Site.RegularPages "Section" "events" }}
+    {{ $events_upcoming := where $events ".Date" "ge" now }}
+    {{/*{{ $events_past := where $events.Reverse ".Date" "lt" now }}*/}}
+
+    {{ with $events_upcoming }}
+        <h2>Upcoming Events</h2>
+        <div class="events-grid">
+            {{ range . }}
+                {{ .Render "view-item" }}
+            {{ end }}
+        </div>
+    {{ end }}
+</div>

@@ -1,0 +1,10 @@
+<div class="event">
+    <h3>
+        {{.Title | markdownify}}
+    </h3>
+    {{ with .Summary }}
+        <div class="event-description">
+            {{- . | markdownify -}}
+        </div>
+    {{ end }}
+</div>
