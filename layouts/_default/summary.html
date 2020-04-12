@@ -1,7 +1,7 @@
 <article class="{{ with .Section }}section-{{ . | urlize }} {{ end }}list-view">
         {{ $title := .Title }}
     {{ with .Params.image }}
-        {{ $imageResource := ($.Site.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" . ) }}
+        {{ $imageResource := ($.Sites.First.GetPage "section" "uploads").Resources.GetMatch (strings.TrimPrefix "/uploads/" . ) }}
         {{ $resized := $imageResource.Fill "600x300" }}
         <img class="summary-image" alt="{{ $title }}" src="{{ $resized.RelPermalink }}"/>
     {{ end }}
