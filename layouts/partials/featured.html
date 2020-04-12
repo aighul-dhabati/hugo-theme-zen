@@ -1,7 +1,7 @@
-{{ $headless := .Site.GetPage "/featured" }}
-{{ $reusablePages := $headless.Resources.ByType "page" }}
+{{ $featured_bundle := .Site.GetPage "/featured" }}
+{{ $featured := $featured_bundle.Resources.ByType "page" }}
 <div class="featured">
-    {{ range $reusablePages }}
+    {{ range $featured }}
         {{ $title := .Title }}
         <div class="featured-tile">
             {{ with .Params.image }}
