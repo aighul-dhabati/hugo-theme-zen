@@ -1,14 +1,44 @@
 <nav class="layout__navigation">
     <h2 class="visually-hidden">{{ i18n "menu_title" }}</h2>
 <ul class="main-menu">
-{{ if .Site.Menus.main -}}
+{{ if eq $.Site.Language.Params.LanguageCode "en-us" }}
+    {{ if .Site.Menus.main_en -}}
+        {{ $currentPage := . -}}
+        {{ range .Site.Menus.main_en -}}
+            <li>
+                <a href="{{ .URL }}"{{ if or ($currentPage.IsMenuCurrent "main_en" .) ($currentPage.HasMenuCurrent "main_en" .) }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+            </li>
+        {{ end -}}
+    {{ end}}
+{{ else if eq $.Site.Language.Params.LanguageCode "cs-cz" }}
+    {{ if .Site.Menus.main_cs -}}
+        {{ $currentPage := . -}}
+        {{ range .Site.Menus.main_cs -}}
+            <li>
+                <a href="{{ .URL }}"{{ if or ($currentPage.IsMenuCurrent "main_cs" .) ($currentPage.HasMenuCurrent "main_cs" .) }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+            </li>
+        {{ end -}}
+    {{ end}}
+{{ else if eq $.Site.Language.Params.LanguageCode "de-de" }}
+    {{ if .Site.Menus.main_de -}}
+        {{ $currentPage := . -}}
+        {{ range .Site.Menus.main_de -}}
+            <li>
+                <a href="{{ .URL }}"{{ if or ($currentPage.IsMenuCurrent "main_de" .) ($currentPage.HasMenuCurrent "main_de" .) }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+            </li>
+        {{ end -}}
+    {{ end}}
+{{ else -}}
+
+
+{{/*{{ if .Site.Menus.main -}}
 
 {{ $currentPage := . -}}
 {{ range .Site.Menus.main -}}
 <li><a href="{{ .URL }}"{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a></li>
 {{ end -}}
 
-{{ else -}}
+{{ else -}}*/}}
 
 {{ $currentSection := .Section -}}
 {{ $currentID := "" -}}
