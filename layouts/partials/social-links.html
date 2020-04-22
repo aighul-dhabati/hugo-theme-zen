@@ -1,9 +1,10 @@
 <h2 class="visually-hidden">Social links</h2>
+{{ range $.Site.Data.social_links }}
 <ul>
-    {{ range $.Param "social_profiles" }}
-
-        <li>
-                <a href="{{ .url }}"><img src="{{ .icon_path | relURL }}" alt="{{ .site | title }} logo"></a></li>
-    {{ end }}
+        {{ range $name, $link := . }}
+            <li>
+                <a href="{{ $link.url }}"><img src="{{ $link.icon_path | relURL }}" alt="{{ $name | title }} logo"></a></li>
+        {{ end }}
 </ul>
+{{ end }}
 
