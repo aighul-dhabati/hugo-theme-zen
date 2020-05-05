@@ -14,9 +14,9 @@
     {{ end }}
     {{ if $.Param "header_action_links"}}
         <div class="header__action-links">
-            {{ range $.Site.Data.site_header_links }}
-                {{ range $name, $link := . }}
-                        <a class="button" href="{{ $link.url }}">{{ $link.text }}</a>
+            {{ with $.Site.Data.site_header_links }}
+                {{ range . }}
+                <a class="button" href="{{ .url }}">{{ .text }}</a>
                 {{ end }}
             {{ end }}
         </div>
