@@ -28,14 +28,6 @@
                 {{ $.Param "slogan" | safeHTML }}
             </p>
         {{ end }}
-        {{ if $.Param "header_action_links"}}
-            <div class="header__action-links">
-                {{ with $.Site.Data.site_header_links }}
-                    {{ range . }}
-                        <a class="button" href="{{ .url }}">{{ .text }}</a>
-                    {{ end }}
-                {{ end }}
-            </div>
-        {{ end }}
+        {{ partial "header_action_links.html" . }}
     </div>
 </header>

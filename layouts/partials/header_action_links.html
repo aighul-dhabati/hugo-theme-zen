@@ -1,0 +1,11 @@
+<div class="header__action-links">
+    {{ $headerMenuMap := (dict "en-us" "header_en" "cs-cz" "header_cs" "de-de" "header_de") }}
+    {{ range $lang_code, $menu_name := $headerMenuMap }}
+    {{ if eq $.Site.Language.Params.LanguageCode $lang_code }}
+        {{ $menu := index $.Site.Menus $menu_name }}
+        {{ range $menu -}}
+            <a class="button" href="{{ .URL }}">{{ .Name }}</a>
+        {{ end -}}
+    {{ end }}
+    {{ end }}
+</div>
