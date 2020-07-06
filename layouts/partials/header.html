@@ -9,7 +9,7 @@
     {{ end }}
     {{ if $.Param "slogan" }}
         <p class="header__slogan">
-            {{ $.Param "slogan" }}
+            {{ $.Param "slogan" | markdownify }}
         </p>
     {{ end }}
     {{ if $.Param "header_action_links"}}
