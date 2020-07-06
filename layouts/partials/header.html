@@ -1,24 +1,41 @@
 <header class="header layout__header">
-    {{ if $.Param "logo" | default true }}<a href="{{ "/" | relLangURL }}" title="Home" rel="home" class="header__logo"><img
-                src="{{ $.Param "logo_path" | relURL }}" alt="Home" class="header__logo-image"></a>{{ end }}
-    {{ if $.Param "header_site_name"}}
-    <h1 class="header__site-name">
-        <a href="{{ "/" | relLangURL }}" title="Home" class="header__site-link"
-           rel="home"><span>{{ .Site.Title }}</span></a>
-    </h1>
-    {{ end }}
-    {{ if $.Param "slogan" }}
-        <p class="header__slogan">
-            {{ $.Param "slogan" | markdownify }}
-        </p>
-    {{ end }}
-    {{ if $.Param "header_action_links"}}
-        <div class="header__action-links">
-            {{ with $.Site.Data.site_header_links }}
-                {{ range . }}
-                <a class="button" href="{{ .url }}">{{ .text }}</a>
+    <div class="header-top">
+        {{ if $.Param "topbar" | default true}}
+            <div class="topbar-inner">
+                <div class="social-links topbar__region">
+                    {{ partial "social-links.html" . }}
+                </div>
+                <div class="navs topbar__region">
+                    <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true"
+                       role="button">{{ i18n "menu_mobile" }}</a>
+                    {{ if .Site.IsMultiLingual }}{{ partial "language-selector.html" . }}{{ end -}}
+                </div>
+            </div>
+        {{ end }}
+    </div>
+    <div class="header-bottom">
+        {{ if $.Param "logo" | default true }}<a href="{{ "/" | relLangURL }}" title="Home" rel="home"
+                                                 class="header__logo"><img
+                    src="{{ $.Param "logo_path" | relURL }}" alt="Home" class="header__logo-image"></a>{{ end }}
+        {{ if $.Param "header_site_name"}}
+            <h1 class="header__site-name">
+                <a href="{{ "/" | relLangURL }}" title="Home" class="header__site-link"
+                   rel="home"><span>{{ .Site.Title }}</span></a>
+            </h1>
+        {{ end }}
+        {{ if $.Param "slogan" }}
+            <p class="header__slogan">
+                {{ $.Param "slogan" | safeHTML }}
+            </p>
+        {{ end }}
+        {{ if $.Param "header_action_links"}}
+            <div class="header__action-links">
+                {{ with $.Site.Data.site_header_links }}
+                    {{ range . }}
+                        <a class="button" href="{{ .url }}">{{ .text }}</a>
+                    {{ end }}
                 {{ end }}
-            {{ end }}
-        </div>
-    {{ end }}
+            </div>
+        {{ end }}
+    </div>
 </header>

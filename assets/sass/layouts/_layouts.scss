@@ -10,8 +10,7 @@
     }
   }
 
-  &__topbar
-  &__header,
+  //&__header,
   &__footer,
   &__main,
   &__navigation,
@@ -42,8 +41,7 @@
     &__page {
       display: grid;
       grid-template-areas:
-              'topbar'
-               'head'
+               'header'
                'nav'
                'top'
                'main'
@@ -78,8 +76,7 @@
 
       &__sidebar-first {
           grid-template-areas:
-                  'topbar topbar'
-                  'head head'
+                  'header header'
                   'nav nav'
                   'side1 top'
                   'side1 main'
@@ -92,8 +89,7 @@
 
       &__sidebar-second {
           grid-template-areas:
-                  'topbar topbar'
-                  'head head'
+                  'header header'
                   'nav nav'
                   'top side2'
                   'main side2'
@@ -106,7 +102,7 @@
 
       &__sidebar-two {
           grid-template-areas:
-                  'head head head'
+                  'header header header'
                   'nav nav nav'
                   'side1 top side2'
                   'side1 main side2'
@@ -119,12 +115,8 @@
       }
     }
 
-    &__topbar {
-      grid-area: topbar;
-    }
-
     &__header {
-      grid-area: head;
+      grid-area: header;
     }
 
     &__navigation {

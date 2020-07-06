@@ -10,7 +10,7 @@ body {
   background-color: $body-bg;
 }
 
-.header {
+.header-bottom {
   padding-top: $zen-gutters / 2;
 
   @include respond-to(s) {

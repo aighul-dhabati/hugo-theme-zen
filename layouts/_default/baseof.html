@@ -9,26 +9,12 @@
 {{- block "head" . }}{{ end }}
 {{/*{{ partial "meta_json_ld.html" . }}*/}}
 {{ partial "scripts.html" . }}
-{{ partialCached "matomo.html" . }}
+{{/*{{ partialCached "matomo.html" . }}*/}}
 </head>
 
 <body class="{{ if .IsPage }}single-page{{ else }}list-page{{ end }}{{ if .IsHome }} front{{ end }}">
 <div class="page layout__page{{ if $.Param "sidebar" | default true }} layout__sidebar-second{{ end }}">
-    <div class="topbar layout__topbar">
-        {{ if $.Param "topbar" | default true}}
-        <div class="topbar-inner">
-            <div class="social-links topbar__region">
-                {{ partial "social-links.html" . }}
-            </div>
-            <div class="navs topbar__region">
-                <a href="#navigation" class="mobile-nav__toggle" aria-haspopup="true"
-                   role="button">{{ i18n "menu_mobile" }}</a>
-                {{ if .Site.IsMultiLingual }}{{ partial "language-selector.html" . }}{{ end -}}
-            </div>
-        </div>
-        {{ end }}
-    </div>
-    {{ partial "header.html" . }}
+{{ partial "header.html" . }}
 
 {{ partial "navbar.html" . }}
 

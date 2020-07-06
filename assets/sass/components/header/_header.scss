@@ -2,6 +2,11 @@
 
 .header,
 %header {
+  width: 100%;
+}
+
+.header-bottom,
+%header-bottom {
   background-image: url(https://picsum.photos/id/291/1800/700);
   background-position: top left;
   background-size: cover;
@@ -65,5 +70,10 @@
         margin-left: 0;
       }
     }
+  }
+
+  p.header__slogan {
+    color: white;
+    text-align: center;
   }
 }
