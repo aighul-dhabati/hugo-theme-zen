@@ -23,11 +23,9 @@
                    rel="home"><span>{{ .Site.Title }}</span></a>
             </h1>
         {{ end }}
-        {{ if $.Param "slogan" }}
-            <p class="header__slogan">
-                {{ $.Param "slogan" | safeHTML }}
-            </p>
-        {{ end }}
+        <p class="header__slogan">
+            {{ i18n "header_slogan" | safeHTML }}
+        </p>
         {{ partial "header_action_links.html" . }}
     </div>
 </header>
